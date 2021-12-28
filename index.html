@@ -13,12 +13,17 @@
         <div class="main-container">
             <h1 id="title">🗻 - 📃 - ✂</h1>
             <div class="play-container">
-                <div id="player-choice">{Player Choice}</div>
-                <div id="seperator">|</div>
+                <div id="player-choice">
+                    <p class="label">Choose:</p>
+                    <button class="selection" disabled id="rock" onclick="playRound()">🗻</button>
+                    <button class="selection inactive" disabled id="paper" onclick="playRound()">📃</button>
+                    <button class="selection inactive" disabled id="scissor" onclick="playRound()">✂</button>
+                </div>
+                <div id="seperator">VS.</div>
                 <div id="cpu-choice">{CPU Choice}</div>
             </div>
-            <button id="cpu-button" onclick="computerPlay()">CPU Play</button>
-            <button id="reset" onclick="resetGame()">Reset</button>
+            <p id="outcome">{Outcome}</p>
+            <button id="start" onclick="game()">Start Game</button>
         </div>
 
     </body>

@@ -11,17 +11,48 @@
 }
 
 .main-container { 
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
 .play-container {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    border: 5px solid black;
+}
+
+button {
+    cursor: pointer;
+}
+
+.label {
+    color: grey;
+    font-weight: bold;
+}
+
+.selection {
+    font-size: 50px;
+    padding: 45px;
 }
 
 #title {
     font-size: 60px;
+}
+
+#outcome {
+    font-size: 24px;
+    margin: 15px 0px;
+}
+
+#start {
+    width: 50%;
+    padding: 10px 0px;
 }

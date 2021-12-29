@@ -15,15 +15,16 @@
             <div class="play-container">
                 <div id="player-choice">
                     <p class="label">Choose:</p>
-                    <button class="selection" disabled id="rock" onclick="playRound()">🗻</button>
-                    <button class="selection inactive" disabled id="paper" onclick="playRound()">📃</button>
-                    <button class="selection inactive" disabled id="scissor" onclick="playRound()">✂</button>
+                    <button class="selection" disabled="true" id="rock" onclick="computerPlay('Rock')">🗻</button>
+                    <button class="selection" disabled="true" id="paper" onclick="computerPlay('Paper')">📃</button>
+                    <button class="selection" disabled="true" id="scissors" onclick="computerPlay('Scissors')">✂</button>
                 </div>
                 <div id="seperator">VS.</div>
-                <div id="cpu-choice">{CPU Choice}</div>
+                <div id="cpu-choice">{CPU}</div>
             </div>
-            <p id="outcome">{Outcome}</p>
-            <button id="start" onclick="game()">Start Game</button>
+            <p class="outcome">Player: <span id="player-score">-</span> | CPU: <span id="cpu-score">-</span></p>
+            <p class="outcome" id="round-outcome">(First to 5 wins)</p>
+            <button id="start" enabled onclick="game()">Start Game</button>
         </div>
 
     </body>

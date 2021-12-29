@@ -5,6 +5,7 @@ const rockPaperScissorsEmojiMap = ['🗻', '📃', '✂']
 let playerWins = 0;
 let cpuWins = 0;
 
+/* Random number generator from 0-2 to access the global maps of values */
 function computerPlay(playerSelection) {
     let min = Math.ceil(0);
     let max = Math.floor(3);
@@ -14,28 +15,30 @@ function computerPlay(playerSelection) {
     playRound(playerSelection, rockPaperScissorsMap[cpuSelectionNumber]);
 }
 
+/* Resets wins and resets screen text */
 function game() {
     playerWins = 0;
     cpuWins = 0;
 
-    toggleStarted(true);
+    toggleStarted(true); //game start buttons toggled
     document.getElementById("player-score").innerHTML = playerWins
     document.getElementById("cpu-score").innerHTML = cpuWins
     document.getElementById("round-outcome").innerHTML = 'Waiting...';
     document.getElementById("cpu-choice").innerHTML = '?';
 }
 
+/* Checks current wins to end and/or show game info text */
 function checkGame(roundOutcomeMessage) {
     document.getElementById("player-score").innerHTML = playerWins;
     document.getElementById("cpu-score").innerHTML = cpuWins;
 
     if(playerWins === 5) {
         roundOutcomeMessage = 'YOU (⌐■_■) WIN';
-        toggleStarted(false);
+        toggleStarted(false); //game end buttons toggled
 
     } else if(cpuWins === 5) {
         roundOutcomeMessage = 'YOU (╯°□°)╯︵ ┻━┻ LOSE';
-        toggleStarted(false);
+        toggleStarted(false); //game end buttons toggled
     }
     document.getElementById("round-outcome").innerHTML = roundOutcomeMessage;
 }
@@ -87,6 +90,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+/* Function to toggle the buttons within the application based on start (true) or end (false) of game */
 function toggleStarted(startToggleOn) {
     if(startToggleOn) { 
         document.getElementById("start").setAttribute("disabled", "");

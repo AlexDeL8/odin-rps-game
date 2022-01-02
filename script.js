@@ -11,7 +11,7 @@ function computerPlay(playerSelection) {
     let max = Math.floor(3);
     let cpuSelectionNumber = (Math.floor(Math.random() * (max - min) + min));
 
-    document.getElementById("cpu-choice").innerHTML = rockPaperScissorsEmojiMap[cpuSelectionNumber]
+    document.getElementById("cpu-choice").innerText = rockPaperScissorsEmojiMap[cpuSelectionNumber]
     playRound(playerSelection, rockPaperScissorsMap[cpuSelectionNumber]);
 }
 
@@ -21,16 +21,16 @@ function game() {
     cpuWins = 0;
 
     toggleStarted(true); //game start buttons toggled
-    document.getElementById("player-score").innerHTML = playerWins
-    document.getElementById("cpu-score").innerHTML = cpuWins
-    document.getElementById("round-outcome").innerHTML = 'Waiting...';
-    document.getElementById("cpu-choice").innerHTML = '?';
+    document.getElementById("player-score").innerText = playerWins
+    document.getElementById("cpu-score").innerText = cpuWins
+    document.getElementById("round-outcome").innerText = '(First to 5 wins)';
+    document.getElementById("cpu-choice").innerText = '?';
 }
 
 /* Checks current wins to end and/or show game info text */
 function checkGame(roundOutcomeMessage) {
-    document.getElementById("player-score").innerHTML = playerWins;
-    document.getElementById("cpu-score").innerHTML = cpuWins;
+    document.getElementById("player-score").innerText = playerWins;
+    document.getElementById("cpu-score").innerText = cpuWins;
 
     if(playerWins === 5) {
         roundOutcomeMessage = 'YOU (⌐■_■) WIN';
@@ -40,7 +40,7 @@ function checkGame(roundOutcomeMessage) {
         roundOutcomeMessage = 'YOU (╯°□°)╯︵ ┻━┻ LOSE';
         toggleStarted(false); //game end buttons toggled
     }
-    document.getElementById("round-outcome").innerHTML = roundOutcomeMessage;
+    document.getElementById("round-outcome").innerText = roundOutcomeMessage;
 }
 
 function playRound(playerSelection, computerSelection) { 

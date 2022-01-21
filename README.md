@@ -1,5 +1,5 @@
 # Odin Rock, Paper, Scissor
-## The Odin Project - Rock, Paper, Scissor game
+## The Odin Project - JS Foundations project
 
 ## Table of Contents
 * [General Info](#general-information)

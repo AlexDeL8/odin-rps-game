@@ -94,6 +94,7 @@ function playRound(playerSelection, computerSelection) {
 function toggleStarted(startToggleOn) {
     if(startToggleOn) { 
         document.getElementById("start").setAttribute("disabled", "");
+        document.getElementById("start").removeAttribute("enabled");
 
         document.getElementById("rock").removeAttribute("disabled");
         document.getElementById("rock").setAttribute("enabled", "");
@@ -113,3 +114,21 @@ function toggleStarted(startToggleOn) {
         document.getElementById("scissors").setAttribute("disabled", "");
     }
 }
+
+window.addEventListener('keydown', (e) => {
+    if(document.getElementById("start").hasAttribute("enabled")) {
+        console.log('here')
+        return;
+    }
+    let keyEntered = e.key;
+    console.log(keyEntered)
+    if(keyEntered === 'ArrowLeft' || keyEntered === 'r') {
+        computerPlay('Rock')
+    } else if(keyEntered === 'ArrowUp' || keyEntered === 'p') {
+        computerPlay('Paper')
+    } else if(keyEntered === 'ArrowRight' || keyEntered === 's') {
+        computerPlay('Scissors')
+    } else {
+        return;
+    }
+});

@@ -12,6 +12,7 @@
 
 ## General Information
 - This is the **Odin Rock, Paper, Scissor project** to practice what was learned in the **JS Foundations** section of the **Foundations** portion in [The Odin Project](https://www.theodinproject.com/dashboard)
+- Visit the project: 🖥️[**Odin Rock, Paper, Scissor](https://alexdel8.github.io/odin-rps-game/)
 
 ## Technologies Used
 - HTML, CSS, Flexbox, JavaScript
